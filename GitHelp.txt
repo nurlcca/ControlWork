@@ -59,3 +59,5 @@ source name_venv/bin/activate Mac
 source name_venv/Scripts/activate Windows
 
 source .venv/bin/activate
+
+cd OOP-63-2

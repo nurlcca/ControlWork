@@ -116,3 +116,22 @@ if __name__ == "__main__":
     # --- SMS ---
     sms = KGSms()
     print("\n", sms.send_otp("+996777123456"))
+
+# Декоратор log_execution
+def log_execution(func):
+    def wrapper(*args, **kwargs):
+        print(f"Функция {func.__name__} вызвана с аргументами {args}")
+        result = func(*args, **kwargs)
+        print(f"Результат: {result}")
+        print("Функция завершена")
+        return result
+    return wrapper
+
+# Пример использования
+@log_execution
+def add(a, b):
+    return a + b
+
+# Тестирование декоратора
+print("\n--- Тестирование декоратора log_execution ---")
+add(5, 3)
